@@ -650,58 +650,132 @@
     <div class="scripts-grid">
 
       <div class="script-card">
-        <div class="script-icon"><i class="fa-solid fa-chart-bar"></i></div>
-        <h3>build_otu_report_v3.py</h3>
-        <p>Self-contained interactive HTML report for 16S OTU microbiome data. Generates 8 analysis tabs including QC, Core Microbiome, Taxonomic Explorer, Alpha/Beta Diversity, Hive Trajectories, Statistics and a Data Table.</p>
+        <div class="script-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>NanoTax</h3>
+        <p>Produces a unified table combining contig information (coverage, length, GC%) and taxonomy for assemblies from Nanopore and Illumina reads. Supports blastn/blastx/diamond and integrates minimap2 or bowtie2 mapping.</p>
         <div class="script-tags">
           <span class="script-tag">Python</span>
-          <span class="script-tag">16S</span>
-          <span class="script-tag">Plotly</span>
-          <span class="script-tag">Microbiome</span>
+          <span class="script-tag">Nanopore</span>
+          <span class="script-tag">Taxonomy</span>
+          <span class="script-tag">Metagenomics</span>
         </div>
-        <a class="script-link" href="https://github.com/diecasfranco/16S-otu-report" target="_blank">
+        <a class="script-link" href="https://github.com/diecasfranco/Nanotax" target="_blank">
           <i class="fa-brands fa-github"></i> View on GitHub
         </a>
       </div>
 
       <div class="script-card">
-        <div class="script-icon"><i class="fa-solid fa-flask"></i></div>
-        <h3>build_otu_report_v2.py</h3>
-        <p>Second iteration of the OTU report. Introduced the "Others" genus breakdown panel, allowing exploration of non-focal genera within the microbiome composition charts.</p>
+        <div class="script-icon"><i class="fa-solid fa-spider"></i></div>
+        <h3>TheMiteRoom — Nanopore Pipeline</h3>
+        <p>Official pipeline for Nanopore amplicon sequencing based on consensus sequences. Builds OTU and zOTU (ASV) tables from Amplicon Sorter output using USEARCH and VSEARCH commands.</p>
         <div class="script-tags">
-          <span class="script-tag">Python</span>
-          <span class="script-tag">16S</span>
-          <span class="script-tag">Plotly</span>
+          <span class="script-tag">Bash</span>
+          <span class="script-tag">Nanopore</span>
+          <span class="script-tag">OTU</span>
+          <span class="script-tag">Amplicon</span>
         </div>
-        <a class="script-link" href="https://github.com/diecasfranco/16S-otu-report" target="_blank">
+        <a class="script-link" href="https://github.com/diecasfranco/TheMiteRoom_Nanopore" target="_blank">
           <i class="fa-brands fa-github"></i> View on GitHub
         </a>
       </div>
 
       <div class="script-card">
         <div class="script-icon"><i class="fa-solid fa-dna"></i></div>
-        <h3>build_otu_report.py</h3>
-        <p>First full OTU-based interactive report. Handles technical replicate merging, control sample isolation, Bray-Curtis PCoA, alpha diversity metrics, and Kruskal-Wallis statistics.</p>
+        <h3>Amplicon Sequencing Tutorial</h3>
+        <p>Step-by-step tutorial for 16S/18S/ITS amplicon analysis: SRA download, FastQC, Trim Galore, PEAR merging, VSEARCH dereplication, chimera removal, OTU/ASV clustering, and SINTAX taxonomy.</p>
         <div class="script-tags">
-          <span class="script-tag">Python</span>
           <span class="script-tag">16S</span>
-          <span class="script-tag">PCoA</span>
+          <span class="script-tag">ITS</span>
+          <span class="script-tag">VSEARCH</span>
+          <span class="script-tag">Tutorial</span>
         </div>
-        <a class="script-link" href="https://github.com/diecasfranco/16S-otu-report" target="_blank">
+        <a class="script-link" href="https://github.com/diecasfranco/amplicon_sequencing_tutorial" target="_blank">
           <i class="fa-brands fa-github"></i> View on GitHub
         </a>
       </div>
 
       <div class="script-card">
-        <div class="script-icon"><i class="fa-solid fa-table"></i></div>
-        <h3>build_report.py</h3>
-        <p>Early prototype report generator. Reads a pre-computed reads summary TSV and produces a basic interactive HTML overview of sequencing run quality.</p>
+        <div class="script-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Tomato Metagenomics</h3>
+        <p>Bioinformatic pipelines for the manuscript "Metagenomic Analysis of the Tomato Microbiome in Colombia Reveals Bacterial Diversity, Potential Pathogens, and Resistance Determinants".</p>
+        <div class="script-tags">
+          <span class="script-tag">Metagenomics</span>
+          <span class="script-tag">Bacteria</span>
+          <span class="script-tag">Resistome</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/tomato_metagenomics" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-bug"></i></div>
+        <h3>symCAP</h3>
+        <p>Symbiosis Custom Annotation Pipeline. Annotates genomes from primary endosymbionts in planthoppers using HMMER, RNAmmer, tRNAscan-SE, and MAFFT for codon-aware alignment.</p>
         <div class="script-tags">
           <span class="script-tag">Python</span>
-          <span class="script-tag">QC</span>
-          <span class="script-tag">HTML</span>
+          <span class="script-tag">Annotation</span>
+          <span class="script-tag">Symbiosis</span>
+          <span class="script-tag">Genomics</span>
         </div>
-        <a class="script-link" href="https://github.com/diecasfranco/16S-otu-report" target="_blank">
+        <a class="script-link" href="https://github.com/diecasfranco/symCAP" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-flask"></i></div>
+        <h3>TRYOCC Metagenomics</h3>
+        <p>Pipelines and supplementary material for the mSystems 2024 paper on facultatively intrabacterial localization of the <em>Trypetimorpha occidentalis</em> Acetobacteraceae endosymbiont.</p>
+        <div class="script-tags">
+          <span class="script-tag">Metagenomics</span>
+          <span class="script-tag">Symbiosis</span>
+          <span class="script-tag">Nanopore</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/TRYOCC_metagenomics" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <h3>Amplicon Analysis Pipeline</h3>
+        <p>Custom multi-target amplicon workflow developed for the Symbiosis Evolution Group at Jagiellonian University, supporting 16S, ITS1/ITS2, and COI targets on Illumina paired-end reads.</p>
+        <div class="script-tags">
+          <span class="script-tag">16S</span>
+          <span class="script-tag">ITS</span>
+          <span class="script-tag">COI</span>
+          <span class="script-tag">Illumina</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/amplicon_analysis_pipeline" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-map"></i></div>
+        <h3>Fertility Islands</h3>
+        <p>Bioinformatic workflow for microbiome analysis of resource islands (fertility islands) in semi-arid environments, built on anvi'o for metagenomic and community profiling.</p>
+        <div class="script-tags">
+          <span class="script-tag">Metagenomics</span>
+          <span class="script-tag">anvi'o</span>
+          <span class="script-tag">Environmental</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/fertility_islands" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Bioinformatics Scripts</h3>
+        <p>Collection of utility scripts to tackle common bioinformatic challenges across metagenomics, amplicon sequencing, and genome analysis workflows.</p>
+        <div class="script-tags">
+          <span class="script-tag">Python</span>
+          <span class="script-tag">Bash</span>
+          <span class="script-tag">Utilities</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/scripts" target="_blank">
           <i class="fa-brands fa-github"></i> View on GitHub
         </a>
       </div>
