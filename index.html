@@ -332,14 +332,16 @@
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I am a microbiologist specialising in host-associated microbiome research,
-          with a focus on the honeybee gut microbiome and its role in bee health,
-          nutrition, and response to agricultural management.
+          I am a microbiologist with broad expertise in microbial ecology and
+          host-associated microbiomes. My research spans Antarctic and marine
+          sediment microbiology, insect endosymbiosis, clinical microbiome studies,
+          and environmental microbiology in tropical and semi-arid ecosystems.
         </p>
         <p>
-          My work combines field experiments, 16S amplicon sequencing, and custom
-          bioinformatics pipelines to understand how diet, environment, and colony
-          management shape microbial communities in <em>Apis mellifera</em>.
+          Currently I work on honeybee gut microbiomes, applying 16S amplicon
+          sequencing and custom bioinformatics pipelines to understand how diet,
+          environment, and colony management shape microbial communities in
+          <em>Apis mellifera</em>.
         </p>
         <p>
           I develop open-source Python tools for interactive analysis and
@@ -376,27 +378,264 @@
     <div class="section-line"></div>
     <div class="pub-filters">
       <button class="filter-btn active" onclick="filterPubs('all',this)">All</button>
-      <button class="filter-btn" onclick="filterPubs('bee',this)">Honeybee</button>
-      <button class="filter-btn" onclick="filterPubs('micro',this)">Microbiology</button>
-      <button class="filter-btn" onclick="filterPubs('method',this)">Methods</button>
+      <button class="filter-btn" onclick="filterPubs('antarctica',this)">Antarctica / Marine</button>
+      <button class="filter-btn" onclick="filterPubs('symbiosis',this)">Insect Symbiosis</button>
+      <button class="filter-btn" onclick="filterPubs('clinical',this)">Clinical</button>
+      <button class="filter-btn" onclick="filterPubs('environment',this)">Environmental</button>
     </div>
     <div class="pub-list" id="pub-list">
-      <!-- Publications will be filled in below — add yours here -->
-      <div class="pub-card" data-topic="bee">
-        <div class="pub-title">
-          <a href="#" target="_blank">
-            <!-- PASTE TITLE HERE -->
-            Publication title goes here
-          </a>
-        </div>
-        <div class="pub-authors"><!-- Authors --></div>
+
+      <!-- 2026 -->
+      <div class="pub-card" data-topic="symbiosis">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Convergent extreme reductive evolution in ancient planthopper symbioses</a></div>
+        <div class="pub-authors">Michalik A, <strong>Franco DC</strong>, Deng J, Prus-Frankowska M, Stroiński A, Łukasik P</div>
         <div class="pub-meta">
-          <span class="pub-journal">Journal Name</span>
-          <span class="pub-year">2024</span>
-          <span class="pub-cited"><i class="fa-solid fa-quote-left"></i> 0 citations</span>
-          <span class="pub-badge badge-bee">Honeybee</span>
+          <span class="pub-journal">Nature Communications</span>
+          <span class="pub-year">2026</span>
+          <span class="pub-badge badge-micro">Insect Symbiosis</span>
         </div>
       </div>
+
+      <!-- 2025 -->
+      <div class="pub-card" data-topic="clinical">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Taxonomic and functional profile of the anorectal microbiota in HIV-positive and HIV-negative men who have sex with men, using a metagenomic approach</a></div>
+        <div class="pub-authors">Hernández-Trujillo PN, Lopez-Barón CA, Arévalo-Pinzón G, Trujillo-Güiza ML, González-Duque MI, Flórez AM, <strong>Franco DC</strong>, Vanegas J</div>
+        <div class="pub-meta">
+          <span class="pub-journal">HIV Medicine</span>
+          <span class="pub-year">2025</span>
+          <span class="pub-badge badge-review">Clinical</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="environment">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Metagenomic analysis reveals environmental drivers of Actinobacteriota-associated antibiotic resistance and biosynthetic genes in Colombian Caribbean resource islands</a></div>
+        <div class="pub-authors">Camargo-Montoya L, Leal-Mejia L, Arenas NE, <strong>Franco DC</strong>, Valero-Valero N, Vanegas J</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Journal of Arid Environments</span>
+          <span class="pub-year">2025</span>
+          <span class="pub-badge badge-micro">Environmental</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="symbiosis">
+        <div class="pub-title"><a href="https://www.biorxiv.org/content/10.1101/2025.05.16.654412" target="_blank">The tiniest genomes shrink much further: extreme reductive evolution in planthopper symbionts <span style="font-size:.75rem;color:#e6a817;font-weight:600;">[Preprint]</span></a></div>
+        <div class="pub-authors">Michalik A, <strong>Franco DC</strong>, Deng J, Prus-Frankowska M, Stroiński A, Łukasik P</div>
+        <div class="pub-meta">
+          <span class="pub-journal">bioRxiv</span>
+          <span class="pub-year">2025</span>
+          <span class="pub-badge badge-micro">Insect Symbiosis</span>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="pub-card" data-topic="symbiosis">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Phylogenomic insights into the relationship and the evolutionary history of planthoppers (Insecta: Hemiptera: Fulgoromorpha)</a></div>
+        <div class="pub-authors">Deng J, Stroiński A, Szwedo J, Ghanavi HR, Yapar E, <strong>Franco DC</strong>, Prus-Frankowska M, Michalik A, Wahlberg N, Łukasik P</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Systematic Entomology</span>
+          <span class="pub-year">2024</span>
+          <span class="pub-badge badge-micro">Insect Symbiosis</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="symbiosis">
+        <div class="pub-title"><a href="https://journals.asm.org/doi/10.1128/msystems.00634-24" target="_blank">Facultatively intrabacterial localization of a planthopper endosymbiont as an adaptation to its vertical transmission</a></div>
+        <div class="pub-authors">Michalik A, <strong>Franco DC</strong>, Szklarzewicz T, Stroiński A, Łukasik P</div>
+        <div class="pub-meta">
+          <span class="pub-journal">mSystems</span>
+          <span class="pub-year">2024</span>
+          <span class="pub-badge badge-micro">Insect Symbiosis</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="environment">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Seasonality and vegetation shape the taxonomic and functional diversity of microorganisms in islands of fertility of a semi-arid region in the Colombian tropics</a></div>
+        <div class="pub-authors">Leal L, <strong>Franco DC</strong>, Vanegas J</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Rhizosphere</span>
+          <span class="pub-year">2024</span>
+          <span class="pub-badge badge-micro">Environmental</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="environment">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Metagenomic and genomic analysis of heavy metal-tolerant and -resistant bacteria in resource islands in a semi-arid zone of the Colombian Caribbean</a></div>
+        <div class="pub-authors">Herrera-Calderon AC, Leal L, Suárez-Bautista JD, Manotas-Viloria HS, Muñoz-García A, <strong>Franco D</strong>, Arenas NE, Vanegas J</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Environmental Science and Pollution Research</span>
+          <span class="pub-year">2024</span>
+          <span class="pub-badge badge-micro">Environmental</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="environment">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Effects of Palm Oil Deodorizer Distillate on the Ruminal Environment of Sheep</a></div>
+        <div class="pub-authors">das Graças DA, de Morais E, Lima ACS, de Souza SM, Sousa LF, <strong>Franco DC</strong>, Silva ALC, Silva AGM</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Animals</span>
+          <span class="pub-year">2024</span>
+          <span class="pub-badge badge-micro">Environmental</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="environment">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Characterization of bacterial diversity in rhizospheric soils, irrigation water, and lettuce crops in municipalities near the Bogotá river, Colombia</a></div>
+        <div class="pub-authors">Echeverry-Gallego RA, Martínez-Pachón D, Arenas NE, <strong>Franco DC</strong>, Moncayo-Lasso A, Vanegas J</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Heliyon</span>
+          <span class="pub-year">2024</span>
+          <span class="pub-badge badge-micro">Environmental</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="symbiosis">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">A new tool in a toolbox: Addressing challenges in high-throughput microbiota surveys across diverse wild insects <span style="font-size:.75rem;color:#e6a817;font-weight:600;">[Preprint]</span></a></div>
+        <div class="pub-authors">Buczek M, Kolasa MR, Prus-Frankowska M, Lipowska M, Nowak KH, Azarbad H, <strong>Franco DC</strong>, Marszałek M, Roslin T, Michalik A</div>
+        <div class="pub-meta">
+          <span class="pub-journal">bioRxiv</span>
+          <span class="pub-year">2024</span>
+          <span class="pub-badge badge-method">Methods</span>
+        </div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="pub-card" data-topic="symbiosis">
+        <div class="pub-title"><a href="https://academic.oup.com/gbe/article/15/7/evad120/7209680" target="_blank">Genome comparison reveals inversions and alternative evolutionary history of nutritional endosymbionts in planthoppers (Hemiptera: Fulgoromorpha)</a></div>
+        <div class="pub-authors">Deng J, Bennett GM, <strong>Franco DC</strong>, Prus-Frankowska M, Stroiński A, Michalik A, Łukasik P</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Genome Biology and Evolution</span>
+          <span class="pub-year">2023</span>
+          <span class="pub-badge badge-micro">Insect Symbiosis</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="symbiosis">
+        <div class="pub-title"><a href="https://www.frontiersin.org/articles/10.3389/fphys.2023.1135346" target="_blank">Variable organization of symbiont-containing tissue across planthoppers hosting different heritable endosymbionts</a></div>
+        <div class="pub-authors">Michalik A, <strong>Franco DC</strong>, Deng J, Szklarzewicz T, Stroiński A, Kobiałka M, Łukasik P</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Frontiers in Physiology</span>
+          <span class="pub-year">2023</span>
+          <span class="pub-badge badge-micro">Insect Symbiosis</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="antarctica">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Insights into Antarctic microbiomes: diversity patterns for terrestrial and marine habitats</a></div>
+        <div class="pub-authors">Bendia AG, Moreira JCF, Ferreira JCN, Romano RG, Ferreira IGC, <strong>Franco DC</strong>, Evangelista H, Montone RC, Pellizari VH</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Anais da Academia Brasileira de Ciências</span>
+          <span class="pub-year">2023</span>
+          <span class="pub-badge badge-bee">Antarctica</span>
+        </div>
+      </div>
+
+      <!-- 2021 -->
+      <div class="pub-card" data-topic="symbiosis">
+        <div class="pub-title"><a href="https://journals.asm.org/doi/10.1128/mbio.01228-21" target="_blank">Alternative transmission patterns in independently acquired nutritional cosymbionts of Dictyopharidae planthoppers</a></div>
+        <div class="pub-authors">Michalik A, <strong>Castillo Franco D</strong>, Kobiałka M, Szklarzewicz T, Stroiński A, Łukasik P</div>
+        <div class="pub-meta">
+          <span class="pub-journal">mBio</span>
+          <span class="pub-year">2021</span>
+          <span class="pub-badge badge-micro">Insect Symbiosis</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="antarctica">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Bathyarchaeia occurrence in rich methane sediments from a Brazilian ría</a></div>
+        <div class="pub-authors">Romano RG, Bendia AG, Moreira JCF, <strong>Franco DC</strong>, Signori CN, Yu T, Wang F, Jovane L, Pellizari VH</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Estuarine, Coastal and Shelf Science</span>
+          <span class="pub-year">2021</span>
+          <span class="pub-badge badge-bee">Antarctica / Marine</span>
+        </div>
+      </div>
+
+      <!-- 2020 -->
+      <div class="pub-card" data-topic="clinical">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Next-generation sequencing to assess potentially active bacteria in endodontic infections</a></div>
+        <div class="pub-authors">Nardello LCL, Amado PPP, <strong>Franco DC</strong>, Cazares RXR, Nogales CG, Mayer MPA, Karygianni L, Thurnheer T, Pinheiro ET</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Journal of Endodontics</span>
+          <span class="pub-year">2020</span>
+          <span class="pub-badge badge-review">Clinical</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="clinical">
+        <div class="pub-title"><a href="https://www.frontiersin.org/articles/10.3389/fcimb.2020.00402" target="_blank">Gut dysbiosis in Chagas disease: a possible link to the pathogenesis</a></div>
+        <div class="pub-authors">de Souza-Basqueira M, Ribeiro RM, de Oliveira LC, Moreira CHV, Martins RCR, <strong>Franco DC</strong>, Amado PPP, Mayer MPA, Sabino EC</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Frontiers in Cellular and Infection Microbiology</span>
+          <span class="pub-year">2020</span>
+          <span class="pub-badge badge-review">Clinical</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="clinical">
+        <div class="pub-title"><a href="https://www.frontiersin.org/articles/10.3389/fcimb.2020.583761" target="_blank">Oral and fecal microbiome in molar-incisor pattern periodontitis</a></div>
+        <div class="pub-authors">Amado PPP, Kawamoto D, Albuquerque-Souza E, <strong>Franco DC</strong>, Saraiva L, Casarin RCV, Horliana ACRT, Mayer MPA</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Frontiers in Cellular and Infection Microbiology</span>
+          <span class="pub-year">2020</span>
+          <span class="pub-badge badge-review">Clinical</span>
+        </div>
+      </div>
+
+      <!-- 2018 -->
+      <div class="pub-card" data-topic="antarctica">
+        <div class="pub-title"><a href="https://www.frontiersin.org/articles/10.3389/fmicb.2018.00899" target="_blank">A mosaic of geothermal and marine features shapes microbial community structure on Deception Island Volcano, Antarctica</a></div>
+        <div class="pub-authors">Bendia AG, Signori CN, <strong>Franco DC</strong>, Duarte RTD, Bohannan BJM, Pellizari VH</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Frontiers in Microbiology</span>
+          <span class="pub-year">2018</span>
+          <span class="pub-badge badge-bee">Antarctica</span>
+        </div>
+      </div>
+
+      <!-- 2017 -->
+      <div class="pub-card" data-topic="antarctica">
+        <div class="pub-title"><a href="https://www.frontiersin.org/articles/10.3389/fmicb.2017.00153" target="_blank">High prevalence of Gammaproteobacteria in the sediments of Admiralty Bay and North Bransfield Basin, Northwestern Antarctic Peninsula</a></div>
+        <div class="pub-authors"><strong>Franco DC</strong>, Signori CN, Duarte RTD, Nakayama CR, Campos LS, Pellizari VH</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Frontiers in Microbiology</span>
+          <span class="pub-year">2017</span>
+          <span class="pub-badge badge-bee">Antarctica</span>
+          <span class="pub-badge" style="background:#e8f5e9;color:#2e7d32;">First Author</span>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topic="environment">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Response of mangrove propagules to the presence of oil- and hydrocarbon-degrading bacteria during an experimental oil spill</a></div>
+        <div class="pub-authors">Chequer L, Bitencourt JAP, Waite CCC, Santos ES, <strong>Franco DC</strong>, Alves R, Crapez MAC</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Latin American Journal of Aquatic Research</span>
+          <span class="pub-year">2017</span>
+          <span class="pub-badge badge-micro">Environmental</span>
+        </div>
+      </div>
+
+      <!-- 2016 -->
+      <div class="pub-card" data-topic="environment">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Biostimulation of metal-resistant microbial consortium to remove zinc from contaminated environments</a></div>
+        <div class="pub-authors">Carpio IEM, <strong>Franco DC</strong>, Sato MIZ, Sakata S, Pellizari VH, Ferreira Filho SS, Rodrigues DF</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Science of the Total Environment</span>
+          <span class="pub-year">2016</span>
+          <span class="pub-badge badge-micro">Environmental</span>
+        </div>
+      </div>
+
+      <!-- 2014 -->
+      <div class="pub-card" data-topic="antarctica">
+        <div class="pub-title"><a href="https://scholar.google.com/citations?user=CieheMcAAAAJ" target="_blank">Effect of plankton-derived organic matter on the microbial community of coastal marine sediments</a></div>
+        <div class="pub-authors">de Moraes PC, <strong>Franco DC</strong>, Pellizari VH, Sumida PYG</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Journal of Experimental Marine Biology and Ecology</span>
+          <span class="pub-year">2014</span>
+          <span class="pub-badge badge-bee">Antarctica / Marine</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -482,14 +721,18 @@
             <i class="fa-brands fa-github"></i>
             github.com/diecasfranco
           </a>
+          <a class="contact-link" href="mailto:diecasfranco@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            diecasfranco@gmail.com
+          </a>
           <a class="contact-link" href="https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en" target="_blank">
             <i class="fa-brands fa-google"></i>
             Google Scholar
           </a>
-          <!-- Add your email, Twitter/X, ORCID, institution link below -->
-          <!-- <a class="contact-link" href="mailto:your@email.com">
-            <i class="fa-solid fa-envelope"></i> your@email.com
-          </a> -->
+          <a class="contact-link" href="https://orcid.org/0000-0002-0731-9511" target="_blank">
+            <i class="fa-brands fa-orcid"></i>
+            ORCID 0000-0002-0731-9511
+          </a>
         </div>
       </div>
       <form class="contact-form" onsubmit="return false;">
@@ -531,9 +774,8 @@
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        // Update these numbers once you have your Google Scholar stats
-        animateCount(document.getElementById('stat-pubs'),  0);
-        animateCount(document.getElementById('stat-cites'), 0);
+        animateCount(document.getElementById('stat-pubs'),  22);
+        animateCount(document.getElementById('stat-cites'), 0); // update with your Google Scholar total
         observer.disconnect();
       }
     });
