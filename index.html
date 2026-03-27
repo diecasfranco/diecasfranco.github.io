@@ -142,7 +142,7 @@
     }
     .about-text p { color: var(--muted); margin-bottom: 14px; font-size: .97rem; }
     .about-stats {
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px;
     }
     .stat-card {
       background: var(--light);
@@ -500,6 +500,11 @@
         <div class="stat-card" style="cursor:pointer" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
           <div class="num" id="stat-cites">—</div>
           <div class="lbl">Citations</div>
+          <div id="scholar-updated" style="font-size:.68rem;color:var(--muted);margin-top:4px"></div>
+        </div>
+        <div class="stat-card" style="cursor:pointer" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
+          <div class="num" id="stat-hindex">—</div>
+          <div class="lbl">H-index</div>
         </div>
         <div class="stat-card">
           <div class="num"><i class="fa-solid fa-dna" style="font-size:1.6rem;color:var(--teal)"></i></div>
@@ -1183,18 +1188,24 @@
   }
 
   function animateCount(el, target) {
+    if (!el) return;
     let v = 0; const step = Math.max(1, Math.ceil(target / 50));
     const t = setInterval(() => { v = Math.min(v + step, target); el.textContent = v; if (v >= target) clearInterval(t); }, 25);
   }
-  let ran = false;
-  function runCounters() {
-    if (ran) return; ran = true;
-    animateCount(document.getElementById('stat-pubs'),  23);
-    animateCount(document.getElementById('stat-cites'), 0); // ← replace 0 with your Google Scholar citation total
-  }
-  const _obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { runCounters(); _obs.disconnect(); } }); }, {threshold:0.1});
-  _obs.observe(document.getElementById('about'));
-  setTimeout(runCounters, 600);
+
+  // Load Scholar stats from JSON (updated weekly by GitHub Actions)
+  fetch('scholar_stats.json?_=' + Date.now())
+    .then(r => r.json())
+    .then(d => {
+      animateCount(document.getElementById('stat-pubs'),    23);
+      animateCount(document.getElementById('stat-cites'),   d.citations  || 0);
+      animateCount(document.getElementById('stat-hindex'),  d.h_index    || 0);
+      const upd = document.getElementById('scholar-updated');
+      if (upd && d.updated) upd.textContent = 'Updated: ' + d.updated;
+    })
+    .catch(() => {
+      animateCount(document.getElementById('stat-pubs'), 23);
+    });
 
   // ── Lightbox ──────────────────────────────────────────────────────────────
   const lbImgs = [...document.querySelectorAll('.gallery-item img')].map(i => i.src);
