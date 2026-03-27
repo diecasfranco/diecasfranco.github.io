@@ -216,6 +216,20 @@
     .tl-type.academia  { background: rgba(26,122,110,.1); color: var(--teal); }
     .tl-type.industry  { background: #fff8e1; color: #b7850a; }
     .tl-type.fellowship{ background: #e3f2fd; color: #1565c0; }
+    .tl-logo {
+      height: 40px; margin-bottom: 12px;
+      display: flex; align-items: center;
+    }
+    .tl-logo img {
+      max-height: 40px; max-width: 160px;
+      object-fit: contain; filter: none;
+    }
+    .tl-logo .tl-logo-icon {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal2) 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.1rem;
+    }
 
     @media (max-width: 768px) {
       .timeline::before { left: 18px; }
@@ -462,6 +476,7 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-card">
+          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/University_Ghent_logo.svg" alt="Ghent University" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-building-columns\'></i></div>'"></div>
           <div class="tl-role">Researcher</div>
           <div class="tl-org">Ghent University</div>
           <div class="tl-meta">
@@ -476,6 +491,7 @@
       <div class="tl-item right">
         <div class="tl-dot"></div>
         <div class="tl-card">
+          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/POL_Jagiellonian_University_logo_BW.svg" alt="Jagiellonian University" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-building-columns\'></i></div>'"></div>
           <div class="tl-role">Researcher</div>
           <div class="tl-org">Jagiellonian University</div>
           <div class="tl-meta">
@@ -490,6 +506,7 @@
       <div class="tl-item">
         <div class="tl-dot navy"></div>
         <div class="tl-card">
+          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/en/d/d7/WHOI_logo.png" alt="Woods Hole Oceanographic Institution" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-water\'></i></div>'"></div>
           <div class="tl-role">Visiting Research Fellow</div>
           <div class="tl-org">Woods Hole Oceanographic Institution</div>
           <div class="tl-meta">
@@ -504,6 +521,7 @@
       <div class="tl-item right">
         <div class="tl-dot"></div>
         <div class="tl-card">
+          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Webysther_20160310_-_Logo_USP.svg" alt="Universidade de São Paulo" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-building-columns\'></i></div>'"></div>
           <div class="tl-role">Researcher — PhD Candidate</div>
           <div class="tl-org">Universidade de São Paulo</div>
           <div class="tl-meta">
@@ -518,6 +536,7 @@
       <div class="tl-item">
         <div class="tl-dot gold"></div>
         <div class="tl-card">
+          <div class="tl-logo"><div class="tl-logo-icon" style="background:linear-gradient(135deg,#e6a817,#f5c842)"><i class="fa-solid fa-leaf"></i></div></div>
           <div class="tl-role">Junior Researcher</div>
           <div class="tl-org">Ergostech Renewal Energy Solutions</div>
           <div class="tl-meta">
@@ -532,6 +551,7 @@
       <div class="tl-item right">
         <div class="tl-dot" style="background:#7b1fa2;box-shadow:0 0 0 3px #7b1fa2"></div>
         <div class="tl-card">
+          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Webysther_20160310_-_Logo_USP.svg" alt="Universidade de São Paulo" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-graduation-cap\'></i></div>'"></div>
           <div class="tl-role">Doctor of Philosophy (PhD)</div>
           <div class="tl-org">Universidade de São Paulo</div>
           <div class="tl-meta">
@@ -546,6 +566,7 @@
       <div class="tl-item">
         <div class="tl-dot" style="background:#7b1fa2;box-shadow:0 0 0 3px #7b1fa2"></div>
         <div class="tl-card">
+          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Webysther_20160310_-_Logo_USP.svg" alt="Universidade de São Paulo" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-graduation-cap\'></i></div>'"></div>
           <div class="tl-role">Master of Science — Biotechnology</div>
           <div class="tl-org">Universidade de São Paulo</div>
           <div class="tl-meta">
@@ -560,6 +581,7 @@
       <div class="tl-item right">
         <div class="tl-dot" style="background:#7b1fa2;box-shadow:0 0 0 3px #7b1fa2"></div>
         <div class="tl-card">
+          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Javeriana_Actualizado.svg" alt="Pontificia Universidad Javeriana" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-graduation-cap\'></i></div>'"></div>
           <div class="tl-role">Bachelor's Degree — Microbiology</div>
           <div class="tl-org">Pontificia Universidad Javeriana</div>
           <div class="tl-meta">
