@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego Franco, PhD — Microbiome Researcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --navy:   #0d1b2a;
+      --teal:   #1a7a6e;
+      --teal2:  #22a08a;
+      --gold:   #e6a817;
+      --light:  #f4f7f6;
+      --white:  #ffffff;
+      --text:   #2c3e50;
+      --muted:  #6b7c8d;
+      --card:   #ffffff;
+      --border: #e2eae7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,27,42,0.96);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 62px;
+    }
+    .nav-logo {
+      color: var(--white); font-weight: 600; font-size: 1rem; letter-spacing: .5px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--teal2); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,.78); text-decoration: none; font-size: .88rem;
+      font-weight: 500; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal2); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #0e2a25 55%, #0a3d35 100%);
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322a08a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 60px;
+      position: relative;
+    }
+    .hero-avatar {
+      width: 200px; height: 200px; flex-shrink: 0;
+      border-radius: 50%;
+      border: 4px solid var(--teal2);
+      background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; color: rgba(255,255,255,.5);
+      box-shadow: 0 0 40px rgba(34,160,138,.3);
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .hero-text h1 span { color: var(--teal2); }
+    .hero-subtitle {
+      margin-top: 10px;
+      font-size: 1.1rem; color: rgba(255,255,255,.7); font-weight: 300;
+    }
+    .hero-tags {
+      margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .tag {
+      background: rgba(34,160,138,.15);
+      border: 1px solid rgba(34,160,138,.4);
+      color: var(--teal2);
+      padding: 5px 14px; border-radius: 20px;
+      font-size: .8rem; font-weight: 500;
+    }
+    .hero-btns { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      padding: 11px 26px; border-radius: 6px;
+      font-size: .9rem; font-weight: 600;
+      text-decoration: none; transition: all .2s; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary { background: var(--teal2); color: var(--white); }
+    .btn-primary:hover { background: #1d8f7e; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 1px solid rgba(255,255,255,.35);
+    }
+    .btn-outline:hover { border-color: var(--teal2); color: var(--teal2); transform: translateY(-1px); }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 5%; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .section-title span { color: var(--teal); }
+    .section-line {
+      width: 50px; height: 4px;
+      background: var(--teal2); border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+      align-items: start;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 14px; font-size: .97rem; }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    .stat-card {
+      background: var(--light);
+      border-radius: 12px; padding: 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .stat-card .num {
+      font-size: 2.2rem; font-weight: 700; color: var(--teal);
+    }
+    .stat-card .lbl { font-size: .82rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── PUBLICATIONS ── */
+    #publications { background: var(--light); }
+    .pub-filters {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;
+    }
+    .filter-btn {
+      padding: 7px 18px; border-radius: 20px; border: 1px solid var(--border);
+      background: var(--white); color: var(--muted); font-size: .83rem;
+      cursor: pointer; transition: all .2s; font-family: inherit;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--teal); color: var(--white); border-color: var(--teal);
+    }
+    .pub-list { display: flex; flex-direction: column; gap: 16px; }
+    .pub-card {
+      background: var(--card); border-radius: 12px;
+      padding: 22px 26px; border: 1px solid var(--border);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .pub-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .pub-card .pub-title {
+      font-weight: 600; color: var(--navy); font-size: .97rem;
+      margin-bottom: 6px; line-height: 1.4;
+    }
+    .pub-card .pub-title a { color: inherit; text-decoration: none; }
+    .pub-card .pub-title a:hover { color: var(--teal); }
+    .pub-card .pub-authors { font-size: .84rem; color: var(--muted); margin-bottom: 8px; }
+    .pub-card .pub-authors strong { color: var(--text); }
+    .pub-card .pub-meta {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    }
+    .pub-journal { font-size: .83rem; color: var(--teal); font-weight: 500; font-style: italic; }
+    .pub-year {
+      font-size: .78rem; background: var(--light);
+      padding: 2px 10px; border-radius: 10px; color: var(--muted);
+    }
+    .pub-cited {
+      font-size: .78rem; color: var(--gold); font-weight: 600;
+    }
+    .pub-cited i { margin-right: 4px; }
+    .pub-badge {
+      font-size: .72rem; padding: 2px 10px; border-radius: 10px;
+      font-weight: 600;
+    }
+    .badge-bee    { background: #fff8e1; color: #b7850a; }
+    .badge-micro  { background: #e8f5e9; color: #2e7d32; }
+    .badge-method { background: #e3f2fd; color: #1565c0; }
+    .badge-review { background: #f3e5f5; color: #6a1b9a; }
+
+    /* ── SCRIPTS ── */
+    #scripts { background: var(--white); }
+    .scripts-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .script-card {
+      background: var(--light); border-radius: 12px;
+      padding: 24px; border: 1px solid var(--border);
+      transition: box-shadow .2s, transform .2s;
+      display: flex; flex-direction: column;
+    }
+    .script-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .script-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal2) 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.1rem; margin-bottom: 14px;
+    }
+    .script-card h3 { font-size: .97rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+    .script-card p  { font-size: .84rem; color: var(--muted); flex: 1; margin-bottom: 16px; }
+    .script-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .script-tag {
+      font-size: .72rem; padding: 2px 10px; border-radius: 10px;
+      background: rgba(26,122,110,.1); color: var(--teal); font-weight: 500;
+    }
+    .script-link {
+      font-size: .83rem; font-weight: 600; color: var(--teal2);
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+    }
+    .script-link:hover { color: var(--teal); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: linear-gradient(135deg, var(--navy) 0%, #0e2a25 100%);
+      color: var(--white);
+    }
+    #contact .section-title { color: var(--white); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+      align-items: start;
+    }
+    .contact-info p { color: rgba(255,255,255,.7); font-size: .95rem; margin-bottom: 28px; }
+    .contact-links { display: flex; flex-direction: column; gap: 14px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 14px;
+      color: rgba(255,255,255,.8); text-decoration: none;
+      font-size: .9rem; transition: color .2s;
+    }
+    .contact-link:hover { color: var(--teal2); }
+    .contact-link i {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: rgba(255,255,255,.07);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .contact-form input, .contact-form textarea {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 8px; padding: 12px 16px;
+      color: var(--white); font-family: inherit; font-size: .9rem;
+      outline: none; transition: border-color .2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.35); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--teal2); }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .contact-form .btn-primary { align-self: flex-start; border: none; font-family: inherit; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.4);
+      text-align: center; padding: 22px;
+      font-size: .82rem;
+    }
+    footer a { color: var(--teal2); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-inner  { flex-direction: column; text-align: center; gap: 30px; }
+      .hero-tags, .hero-btns { justify-content: center; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">Diego <span>Franco</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#scripts">Scripts</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-avatar"><i class="fa-solid fa-bacteria"></i></div>
+    <div class="hero-text">
+      <h1>Diego Franco, <span>PhD</span></h1>
+      <p class="hero-subtitle">Microbiologist &amp; Microbiome Researcher</p>
+      <div class="hero-tags">
+        <span class="tag">16S Amplicon Sequencing</span>
+        <span class="tag">Honeybee Gut Microbiome</span>
+        <span class="tag">Bioinformatics</span>
+        <span class="tag">Microbial Ecology</span>
+        <span class="tag">Python</span>
+      </div>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#publications"><i class="fa-solid fa-book-open"></i> Publications</a>
+        <a class="btn btn-outline" href="#scripts"><i class="fa-brands fa-github"></i> Scripts</a>
+        <a class="btn btn-outline" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="section-line"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am a microbiologist specialising in host-associated microbiome research,
+          with a focus on the honeybee gut microbiome and its role in bee health,
+          nutrition, and response to agricultural management.
+        </p>
+        <p>
+          My work combines field experiments, 16S amplicon sequencing, and custom
+          bioinformatics pipelines to understand how diet, environment, and colony
+          management shape microbial communities in <em>Apis mellifera</em>.
+        </p>
+        <p>
+          I develop open-source Python tools for interactive analysis and
+          visualisation of microbiome data, making complex multi-sample results
+          accessible through self-contained HTML reports.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="num" id="stat-pubs">—</div>
+          <div class="lbl">Publications</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-cites">—</div>
+          <div class="lbl">Citations</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">16S</div>
+          <div class="lbl">Amplicon Sequencing</div>
+        </div>
+        <div class="stat-card">
+          <div class="num"><i class="fa-solid fa-bee" style="font-size:1.6rem;color:var(--gold)"></i></div>
+          <div class="lbl">Honeybee Microbiome</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner">
+    <h2 class="section-title">Peer-reviewed <span>Publications</span></h2>
+    <div class="section-line"></div>
+    <div class="pub-filters">
+      <button class="filter-btn active" onclick="filterPubs('all',this)">All</button>
+      <button class="filter-btn" onclick="filterPubs('bee',this)">Honeybee</button>
+      <button class="filter-btn" onclick="filterPubs('micro',this)">Microbiology</button>
+      <button class="filter-btn" onclick="filterPubs('method',this)">Methods</button>
+    </div>
+    <div class="pub-list" id="pub-list">
+      <!-- Publications will be filled in below — add yours here -->
+      <div class="pub-card" data-topic="bee">
+        <div class="pub-title">
+          <a href="#" target="_blank">
+            <!-- PASTE TITLE HERE -->
+            Publication title goes here
+          </a>
+        </div>
+        <div class="pub-authors"><!-- Authors --></div>
+        <div class="pub-meta">
+          <span class="pub-journal">Journal Name</span>
+          <span class="pub-year">2024</span>
+          <span class="pub-cited"><i class="fa-solid fa-quote-left"></i> 0 citations</span>
+          <span class="pub-badge badge-bee">Honeybee</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTS -->
+<section id="scripts">
+  <div class="section-inner">
+    <h2 class="section-title">Open-source <span>Scripts</span></h2>
+    <div class="section-line"></div>
+    <div class="scripts-grid">
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <h3>build_otu_report_v3.py</h3>
+        <p>Self-contained interactive HTML report for 16S OTU microbiome data. Generates 8 analysis tabs including QC, Core Microbiome, Taxonomic Explorer, Alpha/Beta Diversity, Hive Trajectories, Statistics and a Data Table.</p>
+        <div class="script-tags">
+          <span class="script-tag">Python</span>
+          <span class="script-tag">16S</span>
+          <span class="script-tag">Plotly</span>
+          <span class="script-tag">Microbiome</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/16S-otu-report" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-flask"></i></div>
+        <h3>build_otu_report_v2.py</h3>
+        <p>Second iteration of the OTU report. Introduced the "Others" genus breakdown panel, allowing exploration of non-focal genera within the microbiome composition charts.</p>
+        <div class="script-tags">
+          <span class="script-tag">Python</span>
+          <span class="script-tag">16S</span>
+          <span class="script-tag">Plotly</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/16S-otu-report" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-dna"></i></div>
+        <h3>build_otu_report.py</h3>
+        <p>First full OTU-based interactive report. Handles technical replicate merging, control sample isolation, Bray-Curtis PCoA, alpha diversity metrics, and Kruskal-Wallis statistics.</p>
+        <div class="script-tags">
+          <span class="script-tag">Python</span>
+          <span class="script-tag">16S</span>
+          <span class="script-tag">PCoA</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/16S-otu-report" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-table"></i></div>
+        <h3>build_report.py</h3>
+        <p>Early prototype report generator. Reads a pre-computed reads summary TSV and produces a basic interactive HTML overview of sequencing run quality.</p>
+        <div class="script-tags">
+          <span class="script-tag">Python</span>
+          <span class="script-tag">QC</span>
+          <span class="script-tag">HTML</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/16S-otu-report" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <h2 class="section-title">Get in <span style="color:var(--teal2)">Touch</span></h2>
+    <div class="section-line"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>I am open to collaborations, questions about my tools, or discussions about honeybee microbiome research. Feel free to reach out.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://github.com/diecasfranco" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            github.com/diecasfranco
+          </a>
+          <a class="contact-link" href="https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en" target="_blank">
+            <i class="fa-brands fa-google"></i>
+            Google Scholar
+          </a>
+          <!-- Add your email, Twitter/X, ORCID, institution link below -->
+          <!-- <a class="contact-link" href="mailto:your@email.com">
+            <i class="fa-solid fa-envelope"></i> your@email.com
+          </a> -->
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="return false;">
+        <input type="text"  placeholder="Your name">
+        <input type="email" placeholder="Your email">
+        <textarea placeholder="Your message"></textarea>
+        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Diego Franco, PhD &nbsp;|&nbsp; Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+</footer>
+
+<script>
+  // ── Publication filter ──────────────────────────────────────────────────────
+  function filterPubs(topic, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pub-card').forEach(card => {
+      card.style.display = (topic === 'all' || card.dataset.topic === topic) ? '' : 'none';
+    });
+  }
+
+  // ── Animate stat counters ───────────────────────────────────────────────────
+  function animateCount(el, target, suffix='') {
+    let start = 0;
+    const step = Math.ceil(target / 40);
+    const timer = setInterval(() => {
+      start = Math.min(start + step, target);
+      el.textContent = start + suffix;
+      if (start >= target) clearInterval(timer);
+    }, 30);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        // Update these numbers once you have your Google Scholar stats
+        animateCount(document.getElementById('stat-pubs'),  0);
+        animateCount(document.getElementById('stat-cites'), 0);
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(document.getElementById('about'));
+</script>
+</body>
+</html>
