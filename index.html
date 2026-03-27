@@ -494,20 +494,20 @@
       </div>
       <div class="about-stats">
         <div class="stat-card">
-          <div class="num" id="stat-pubs">—</div>
-          <div class="lbl">Publications</div>
-        </div>
-        <div class="stat-card" style="cursor:pointer" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
-          <div class="num"><i class="fa-brands fa-google" style="font-size:1.6rem;color:var(--teal)"></i></div>
-          <div class="lbl">Citations — Google Scholar</div>
+          <div class="num"><i class="fa-solid fa-dna" style="font-size:1.6rem;color:var(--teal)"></i></div>
+          <div class="lbl">Amplicon Sequencing</div>
         </div>
         <div class="stat-card">
-          <div class="num">5</div>
-          <div class="lbl">Countries</div>
+          <div class="num"><i class="fa-solid fa-bacteria" style="font-size:1.6rem;color:var(--teal)"></i></div>
+          <div class="lbl">Microbiome</div>
         </div>
         <div class="stat-card">
-          <div class="num">12+</div>
-          <div class="lbl">Years of Research</div>
+          <div class="num"><i class="fa-solid fa-microscope" style="font-size:1.6rem;color:var(--teal)"></i></div>
+          <div class="lbl">Metagenomics</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" style="font-size:1.45rem;line-height:1.4">🇨🇴 🇧🇷 🇺🇸 🇵🇱 🇧🇪</div>
+          <div class="lbl">5 Countries</div>
         </div>
       </div>
     </div>
@@ -1189,18 +1189,7 @@
     }, 30);
   }
 
-  let countersRun = false;
-  function runCounters() {
-    if (countersRun) return;
-    countersRun = true;
-    animateCount(document.getElementById('stat-pubs'), 23);
-  }
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { runCounters(); observer.disconnect(); } });
-  }, { threshold: 0.1 });
-  observer.observe(document.getElementById('about'));
-  setTimeout(runCounters, 500);
+  // stat counters removed — cards are now research area icons
 
   // ── Lightbox ──────────────────────────────────────────────────────────────
   const lbImgs = [...document.querySelectorAll('.gallery-item img')].map(i => i.src);
