@@ -361,6 +361,52 @@
     .contact-form textarea { resize: vertical; min-height: 120px; }
     .contact-form .btn-primary { align-self: flex-start; border: none; font-family: inherit; }
 
+    /* ── GALLERY ── */
+    #gallery { background: var(--navy); }
+    #gallery .section-title { color: var(--white); }
+    #gallery .section-line  { background: var(--teal2); }
+    #gallery .section-subtitle { color: rgba(255,255,255,.6); margin-top:-28px; margin-bottom:36px; font-size:.92rem; }
+    .gallery-grid {
+      columns: 4 200px; column-gap: 10px;
+    }
+    .gallery-item {
+      break-inside: avoid; margin-bottom: 10px;
+      cursor: pointer; overflow: hidden; border-radius: 8px;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%; display: block;
+      transition: transform .3s, filter .3s;
+      filter: brightness(.88);
+    }
+    .gallery-item:hover img { transform: scale(1.04); filter: brightness(1); }
+
+    /* lightbox */
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,.92);
+      align-items: center; justify-content: center;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 90vw; max-height: 90vh;
+      border-radius: 6px; box-shadow: 0 0 60px rgba(0,0,0,.8);
+    }
+    #lb-close {
+      position: absolute; top: 20px; right: 28px;
+      color: white; font-size: 2rem; cursor: pointer; line-height: 1;
+      background: none; border: none;
+    }
+    #lb-prev, #lb-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      color: white; font-size: 2rem; cursor: pointer;
+      background: rgba(255,255,255,.1); border: none;
+      padding: 12px 18px; border-radius: 6px; transition: background .2s;
+    }
+    #lb-prev { left: 16px; }
+    #lb-next { right: 16px; }
+    #lb-prev:hover, #lb-next:hover { background: rgba(255,255,255,.25); }
+
     /* ── FOOTER ── */
     footer {
       background: var(--navy); color: rgba(255,255,255,.4);
@@ -388,6 +434,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#scripts">Scripts</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -403,10 +450,12 @@
       <h1>Diego Castillo Franco, <span>PhD</span></h1>
       <p class="hero-subtitle">Microbiologist &amp; Microbiome Researcher</p>
       <div class="hero-tags">
-        <span class="tag">16S Amplicon Sequencing</span>
-        <span class="tag">Honeybee Gut Microbiome</span>
-        <span class="tag">Bioinformatics</span>
+        <span class="tag">Metagenomics</span>
+        <span class="tag">Amplicon Sequencing</span>
         <span class="tag">Microbial Ecology</span>
+        <span class="tag">Metabolic Inferences</span>
+        <span class="tag">Bioinformatics</span>
+        <span class="tag">HPC</span>
         <span class="tag">Python</span>
       </div>
       <div class="hero-btns">
@@ -448,17 +497,17 @@
           <div class="num" id="stat-pubs">—</div>
           <div class="lbl">Publications</div>
         </div>
-        <div class="stat-card">
-          <div class="num" id="stat-cites">—</div>
-          <div class="lbl">Citations</div>
+        <div class="stat-card" style="cursor:pointer" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
+          <div class="num"><i class="fa-brands fa-google" style="font-size:1.6rem;color:var(--teal)"></i></div>
+          <div class="lbl">Citations — Google Scholar</div>
         </div>
         <div class="stat-card">
-          <div class="num">16S</div>
-          <div class="lbl">Amplicon Sequencing</div>
+          <div class="num">5</div>
+          <div class="lbl">Countries</div>
         </div>
         <div class="stat-card">
-          <div class="num"><i class="fa-solid fa-bee" style="font-size:1.6rem;color:var(--gold)"></i></div>
-          <div class="lbl">Honeybee Microbiome</div>
+          <div class="num">12+</div>
+          <div class="lbl">Years of Research</div>
         </div>
       </div>
     </div>
@@ -1020,6 +1069,59 @@
   </div>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-inner">
+    <h2 class="section-title">Antarctica <span style="color:var(--teal2)">Field Work</span></h2>
+    <div class="section-line"></div>
+    <p class="section-subtitle">Photos from Antarctic expeditions — Admiralty Bay &amp; Deception Island</p>
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item" onclick="openLb(0)"><img src="antartica/DSC05159.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(1)"><img src="antartica/DSC_0600.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(2)"><img src="antartica/DSC04073.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(3)"><img src="antartica/DSC03128.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(4)"><img src="antartica/051215_Antartica-EV_230.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(5)"><img src="antartica/IMG_1260.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(6)"><img src="antartica/DSC_0269.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(7)"><img src="antartica/DSC03127.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(8)"><img src="antartica/DSC00773.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(9)"><img src="antartica/DSC04413.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(10)"><img src="antartica/DSC_0623.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(11)"><img src="antartica/DSC03116.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(12)"><img src="antartica/DSC03126.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(13)"><img src="antartica/GOPR0104.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(14)"><img src="antartica/DSC05296.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(15)"><img src="antartica/DSC04494.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(16)"><img src="antartica/DSC04410.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(17)"><img src="antartica/DSC_0317.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(18)"><img src="antartica/DSC04104.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(19)"><img src="antartica/051215_Antartica-EV_121.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(20)"><img src="antartica/DSC03109.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(21)"><img src="antartica/301115_Antartica-EV_148-2.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(22)"><img src="antartica/IMG_20151205_105453614_HDR.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(23)"><img src="antartica/DSC00765.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(24)"><img src="antartica/DSC04171.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(25)"><img src="antartica/IMG_3304.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(26)"><img src="antartica/DSC04272.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(27)"><img src="antartica/IMG_20151205_105502110.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(28)"><img src="antartica/DSC04084.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(29)"><img src="antartica/DSC_0088_Diego.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(30)"><img src="antartica/DSC_0399.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(31)"><img src="antartica/IMG_20151205_105457607_HDR.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(32)"><img src="antartica/DSC_0366.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(33)"><img src="antartica/IMG_0993.JPG" alt="Antarctica" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLb()">&#x2715;</button>
+  <button id="lb-prev"  onclick="shiftLb(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="Antarctica">
+  <button id="lb-next"  onclick="shiftLb(1)">&#8250;</button>
+</div>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
@@ -1091,16 +1193,41 @@
   function runCounters() {
     if (countersRun) return;
     countersRun = true;
-    animateCount(document.getElementById('stat-pubs'),  23);
-    animateCount(document.getElementById('stat-cites'), 0); // ← update with your Google Scholar total
+    animateCount(document.getElementById('stat-pubs'), 23);
   }
 
-  // Run when About section enters view, or after 2s as fallback
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { runCounters(); observer.disconnect(); } });
   }, { threshold: 0.1 });
   observer.observe(document.getElementById('about'));
-  setTimeout(runCounters, 2000);
+  setTimeout(runCounters, 500);
+
+  // ── Lightbox ──────────────────────────────────────────────────────────────
+  const lbImgs = [...document.querySelectorAll('.gallery-item img')].map(i => i.src);
+  let lbIdx = 0;
+  function openLb(i) {
+    lbIdx = i;
+    document.getElementById('lb-img').src = lbImgs[i];
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function shiftLb(d) {
+    lbIdx = (lbIdx + d + lbImgs.length) % lbImgs.length;
+    document.getElementById('lb-img').src = lbImgs[lbIdx];
+  }
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLb();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowRight') shiftLb(1);
+    if (e.key === 'ArrowLeft')  shiftLb(-1);
+  });
 </script>
 </body>
 </html>
