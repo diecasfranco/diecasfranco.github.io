@@ -55,7 +55,7 @@
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      background: url("antartica/DSC_0366-EFFECTS.jpg") center center / cover no-repeat;
+      background: url("antartica/DSC_0459.JPG") center center / cover no-repeat;
       display: flex; align-items: center;
       padding: 100px 5% 60px;
       position: relative; overflow: hidden;
@@ -142,7 +142,7 @@
     }
     .about-text p { color: var(--muted); margin-bottom: 14px; font-size: .97rem; }
     .about-stats {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
     }
     .stat-card {
       background: var(--light);
@@ -494,6 +494,14 @@
       </div>
       <div class="about-stats">
         <div class="stat-card">
+          <div class="num" id="stat-pubs">—</div>
+          <div class="lbl">Publications</div>
+        </div>
+        <div class="stat-card" style="cursor:pointer" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
+          <div class="num" id="stat-cites">—</div>
+          <div class="lbl">Citations</div>
+        </div>
+        <div class="stat-card">
           <div class="num"><i class="fa-solid fa-dna" style="font-size:1.6rem;color:var(--teal)"></i></div>
           <div class="lbl">Amplicon Sequencing</div>
         </div>
@@ -566,18 +574,18 @@
         </div>
       </div>
 
-      <!-- USP PhD -->
+      <!-- PhD -->
       <div class="tl-item right">
-        <div class="tl-dot"></div>
+        <div class="tl-dot" style="background:#7b1fa2;box-shadow:0 0 0 3px #7b1fa2"></div>
         <div class="tl-card">
-          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Webysther_20160310_-_Logo_USP.svg" alt="Universidade de São Paulo" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-building-columns\'></i></div>'"></div>
-          <div class="tl-role">Researcher — PhD Candidate</div>
+          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Webysther_20160310_-_Logo_USP.svg" alt="Universidade de São Paulo" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-graduation-cap\'></i></div>'"></div>
+          <div class="tl-role">Doctor of Philosophy (PhD)</div>
           <div class="tl-org">Universidade de São Paulo</div>
           <div class="tl-meta">
-            <span class="tl-date"><i class="fa-regular fa-calendar"></i> Feb 2015 — Apr 2019</span>
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> 2015 — 2019</span>
             <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> São Paulo, Brazil</span>
           </div>
-          <span class="tl-type academia">Academia · Full-time</span>
+          <span class="tl-type" style="background:#f3e5f5;color:#7b1fa2;">Education</span>
         </div>
       </div>
 
@@ -593,21 +601,6 @@
             <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> Greater Campinas, Brazil</span>
           </div>
           <span class="tl-type industry">Industry · Full-time</span>
-        </div>
-      </div>
-
-      <!-- PhD -->
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:#7b1fa2;box-shadow:0 0 0 3px #7b1fa2"></div>
-        <div class="tl-card">
-          <div class="tl-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Webysther_20160310_-_Logo_USP.svg" alt="Universidade de São Paulo" onerror="this.parentElement.innerHTML='<div class=\'tl-logo-icon\'><i class=\'fa-solid fa-graduation-cap\'></i></div>'"></div>
-          <div class="tl-role">Doctor of Philosophy (PhD)</div>
-          <div class="tl-org">Universidade de São Paulo</div>
-          <div class="tl-meta">
-            <span class="tl-date"><i class="fa-regular fa-calendar"></i> 2015 — 2019</span>
-            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> São Paulo, Brazil</span>
-          </div>
-          <span class="tl-type" style="background:#f3e5f5;color:#7b1fa2;">Education</span>
         </div>
       </div>
 
@@ -1189,7 +1182,19 @@
     }, 30);
   }
 
-  // stat counters removed — cards are now research area icons
+  function animateCount(el, target) {
+    let v = 0; const step = Math.max(1, Math.ceil(target / 50));
+    const t = setInterval(() => { v = Math.min(v + step, target); el.textContent = v; if (v >= target) clearInterval(t); }, 25);
+  }
+  let ran = false;
+  function runCounters() {
+    if (ran) return; ran = true;
+    animateCount(document.getElementById('stat-pubs'),  23);
+    animateCount(document.getElementById('stat-cites'), 0); // ← replace 0 with your Google Scholar citation total
+  }
+  const _obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { runCounters(); _obs.disconnect(); } }); }, {threshold:0.1});
+  _obs.observe(document.getElementById('about'));
+  setTimeout(runCounters, 600);
 
   // ── Lightbox ──────────────────────────────────────────────────────────────
   const lbImgs = [...document.querySelectorAll('.gallery-item img')].map(i => i.src);
