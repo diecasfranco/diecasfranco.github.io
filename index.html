@@ -155,6 +155,78 @@
     }
     .stat-card .lbl { font-size: .82rem; color: var(--muted); margin-top: 4px; }
 
+    /* ── TIMELINE ── */
+    #experience { background: var(--white); }
+    .timeline {
+      position: relative; max-width: 860px; margin: 0 auto;
+      padding: 10px 0 20px;
+    }
+    .timeline::before {
+      content: ""; position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 3px; background: var(--border);
+      transform: translateX(-50%);
+    }
+    .tl-item {
+      display: flex; justify-content: flex-end;
+      padding-right: calc(50% + 36px);
+      margin-bottom: 40px; position: relative;
+    }
+    .tl-item.right {
+      justify-content: flex-start;
+      padding-right: 0; padding-left: calc(50% + 36px);
+    }
+    .tl-dot {
+      position: absolute; left: 50%; top: 22px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--teal2); border: 3px solid var(--white);
+      box-shadow: 0 0 0 3px var(--teal2);
+      transform: translateX(-50%); z-index: 1;
+    }
+    .tl-dot.gold  { background: var(--gold);  box-shadow: 0 0 0 3px var(--gold); }
+    .tl-dot.navy  { background: var(--navy);  box-shadow: 0 0 0 3px var(--navy); }
+    .tl-card {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 22px;
+      max-width: 360px; width: 100%;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .tl-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .tl-card .tl-role {
+      font-weight: 700; color: var(--navy); font-size: .97rem; margin-bottom: 4px;
+    }
+    .tl-card .tl-org {
+      font-size: .88rem; color: var(--teal); font-weight: 600; margin-bottom: 6px;
+    }
+    .tl-card .tl-meta {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;
+    }
+    .tl-card .tl-date {
+      font-size: .78rem; color: var(--muted);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .tl-card .tl-loc {
+      font-size: .78rem; color: var(--muted);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .tl-type {
+      display: inline-block; font-size: .72rem; font-weight: 600;
+      padding: 2px 10px; border-radius: 10px; margin-top: 6px;
+    }
+    .tl-type.academia  { background: rgba(26,122,110,.1); color: var(--teal); }
+    .tl-type.industry  { background: #fff8e1; color: #b7850a; }
+    .tl-type.fellowship{ background: #e3f2fd; color: #1565c0; }
+
+    @media (max-width: 768px) {
+      .timeline::before { left: 18px; }
+      .tl-item, .tl-item.right {
+        justify-content: flex-start;
+        padding-right: 0; padding-left: 50px;
+      }
+      .tl-dot { left: 18px; }
+      .tl-card { max-width: 100%; }
+    }
+
     /* ── PUBLICATIONS ── */
     #publications { background: var(--light); }
     .pub-filters {
@@ -299,6 +371,7 @@
   <a class="nav-logo" href="#hero">Diego Castillo <span>Franco</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#scripts">Scripts</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -374,6 +447,129 @@
           <div class="lbl">Honeybee Microbiome</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <h2 class="section-title">Professional <span>Experience</span></h2>
+    <div class="section-line"></div>
+    <div class="timeline">
+
+      <!-- Ghent University -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-role">Researcher</div>
+          <div class="tl-org">Ghent University</div>
+          <div class="tl-meta">
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> Jan 2024 — Jan 2026</span>
+            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> Belgium</span>
+          </div>
+          <span class="tl-type academia">Academia · Full-time</span>
+        </div>
+      </div>
+
+      <!-- Jagiellonian University -->
+      <div class="tl-item right">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-role">Researcher</div>
+          <div class="tl-org">Jagiellonian University</div>
+          <div class="tl-meta">
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> Nov 2019 — Jan 2024</span>
+            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> Kraków, Poland</span>
+          </div>
+          <span class="tl-type academia">Academia · Full-time</span>
+        </div>
+      </div>
+
+      <!-- Woods Hole -->
+      <div class="tl-item">
+        <div class="tl-dot navy"></div>
+        <div class="tl-card">
+          <div class="tl-role">Visiting Research Fellow</div>
+          <div class="tl-org">Woods Hole Oceanographic Institution</div>
+          <div class="tl-meta">
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> Aug 2017 — Nov 2017</span>
+            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> Woods Hole, MA, USA</span>
+          </div>
+          <span class="tl-type fellowship">Fellowship</span>
+        </div>
+      </div>
+
+      <!-- USP PhD -->
+      <div class="tl-item right">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-role">Researcher — PhD Candidate</div>
+          <div class="tl-org">Universidade de São Paulo</div>
+          <div class="tl-meta">
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> Feb 2015 — Apr 2019</span>
+            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> São Paulo, Brazil</span>
+          </div>
+          <span class="tl-type academia">Academia · Full-time</span>
+        </div>
+      </div>
+
+      <!-- Ergostech -->
+      <div class="tl-item">
+        <div class="tl-dot gold"></div>
+        <div class="tl-card">
+          <div class="tl-role">Junior Researcher</div>
+          <div class="tl-org">Ergostech Renewal Energy Solutions</div>
+          <div class="tl-meta">
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> Jul 2014 — Nov 2014</span>
+            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> Greater Campinas, Brazil</span>
+          </div>
+          <span class="tl-type industry">Industry · Full-time</span>
+        </div>
+      </div>
+
+      <!-- PhD -->
+      <div class="tl-item right">
+        <div class="tl-dot" style="background:#7b1fa2;box-shadow:0 0 0 3px #7b1fa2"></div>
+        <div class="tl-card">
+          <div class="tl-role">Doctor of Philosophy (PhD)</div>
+          <div class="tl-org">Universidade de São Paulo</div>
+          <div class="tl-meta">
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> 2015 — 2019</span>
+            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> São Paulo, Brazil</span>
+          </div>
+          <span class="tl-type" style="background:#f3e5f5;color:#7b1fa2;">Education</span>
+        </div>
+      </div>
+
+      <!-- MSc -->
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#7b1fa2;box-shadow:0 0 0 3px #7b1fa2"></div>
+        <div class="tl-card">
+          <div class="tl-role">Master of Science — Biotechnology</div>
+          <div class="tl-org">Universidade de São Paulo</div>
+          <div class="tl-meta">
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> 2011 — 2013</span>
+            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> São Paulo, Brazil</span>
+          </div>
+          <span class="tl-type" style="background:#f3e5f5;color:#7b1fa2;">Education</span>
+        </div>
+      </div>
+
+      <!-- BSc -->
+      <div class="tl-item right">
+        <div class="tl-dot" style="background:#7b1fa2;box-shadow:0 0 0 3px #7b1fa2"></div>
+        <div class="tl-card">
+          <div class="tl-role">Bachelor's Degree — Microbiology</div>
+          <div class="tl-org">Pontificia Universidad Javeriana</div>
+          <div class="tl-meta">
+            <span class="tl-date"><i class="fa-regular fa-calendar"></i> 2003 — 2008</span>
+            <span class="tl-loc"><i class="fa-solid fa-location-dot"></i> Colombia</span>
+          </div>
+          <span class="tl-type" style="background:#f3e5f5;color:#7b1fa2;">Education</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
