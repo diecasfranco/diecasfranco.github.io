@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego Castillo Franco, PhD — Scripts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Diego Castillo <span>Franco</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="scripts.html" class="active">Scripts</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- SCRIPTS -->
+<section id="scripts" class="page-top">
+  <div class="section-inner">
+    <h2 class="section-title">Open-source <span>Scripts</span></h2>
+    <div class="section-line"></div>
+    <div class="scripts-grid">
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>NanoTax</h3>
+        <p>Produces a unified table combining contig information (coverage, length, GC%) and taxonomy for assemblies from Nanopore and Illumina reads. Supports blastn/blastx/diamond and integrates minimap2 or bowtie2 mapping.</p>
+        <div class="script-tags">
+          <span class="script-tag">Python</span>
+          <span class="script-tag">Nanopore</span>
+          <span class="script-tag">Taxonomy</span>
+          <span class="script-tag">Metagenomics</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/Nanotax" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-spider"></i></div>
+        <h3>TheMiteRoom — Nanopore Pipeline</h3>
+        <p>Official pipeline for Nanopore amplicon sequencing based on consensus sequences. Builds OTU and zOTU (ASV) tables from Amplicon Sorter output using USEARCH and VSEARCH commands.</p>
+        <div class="script-tags">
+          <span class="script-tag">Bash</span>
+          <span class="script-tag">Nanopore</span>
+          <span class="script-tag">OTU</span>
+          <span class="script-tag">Amplicon</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/TheMiteRoom_Nanopore" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-dna"></i></div>
+        <h3>Amplicon Sequencing Tutorial</h3>
+        <p>Step-by-step tutorial for 16S/18S/ITS amplicon analysis: SRA download, FastQC, Trim Galore, PEAR merging, VSEARCH dereplication, chimera removal, OTU/ASV clustering, and SINTAX taxonomy.</p>
+        <div class="script-tags">
+          <span class="script-tag">16S</span>
+          <span class="script-tag">ITS</span>
+          <span class="script-tag">VSEARCH</span>
+          <span class="script-tag">Tutorial</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/amplicon_sequencing_tutorial" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Tomato Metagenomics</h3>
+        <p>Bioinformatic pipelines for the manuscript "Metagenomic Analysis of the Tomato Microbiome in Colombia Reveals Bacterial Diversity, Potential Pathogens, and Resistance Determinants".</p>
+        <div class="script-tags">
+          <span class="script-tag">Metagenomics</span>
+          <span class="script-tag">Bacteria</span>
+          <span class="script-tag">Resistome</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/tomato_metagenomics" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-bug"></i></div>
+        <h3>symCAP</h3>
+        <p>Symbiosis Custom Annotation Pipeline. Annotates genomes from primary endosymbionts in planthoppers using HMMER, RNAmmer, tRNAscan-SE, and MAFFT for codon-aware alignment.</p>
+        <div class="script-tags">
+          <span class="script-tag">Python</span>
+          <span class="script-tag">Annotation</span>
+          <span class="script-tag">Symbiosis</span>
+          <span class="script-tag">Genomics</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/symCAP" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-flask"></i></div>
+        <h3>TRYOCC Metagenomics</h3>
+        <p>Pipelines and supplementary material for the mSystems 2024 paper on facultatively intrabacterial localization of the <em>Trypetimorpha occidentalis</em> Acetobacteraceae endosymbiont.</p>
+        <div class="script-tags">
+          <span class="script-tag">Metagenomics</span>
+          <span class="script-tag">Symbiosis</span>
+          <span class="script-tag">Nanopore</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/TRYOCC_metagenomics" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <h3>Amplicon Analysis Pipeline</h3>
+        <p>Custom multi-target amplicon workflow developed for the Symbiosis Evolution Group at Jagiellonian University, supporting 16S, ITS1/ITS2, and COI targets on Illumina paired-end reads.</p>
+        <div class="script-tags">
+          <span class="script-tag">16S</span>
+          <span class="script-tag">ITS</span>
+          <span class="script-tag">COI</span>
+          <span class="script-tag">Illumina</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/amplicon_analysis_pipeline" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-map"></i></div>
+        <h3>Fertility Islands</h3>
+        <p>Bioinformatic workflow for microbiome analysis of resource islands (fertility islands) in semi-arid environments, built on anvi'o for metagenomic and community profiling.</p>
+        <div class="script-tags">
+          <span class="script-tag">Metagenomics</span>
+          <span class="script-tag">anvi'o</span>
+          <span class="script-tag">Environmental</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/fertility_islands" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="script-card">
+        <div class="script-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Bioinformatics Scripts</h3>
+        <p>Collection of utility scripts to tackle common bioinformatic challenges across metagenomics, amplicon sequencing, and genome analysis workflows.</p>
+        <div class="script-tags">
+          <span class="script-tag">Python</span>
+          <span class="script-tag">Bash</span>
+          <span class="script-tag">Utilities</span>
+        </div>
+        <a class="script-link" href="https://github.com/diecasfranco/scripts" target="_blank">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Diego Castillo Franco, PhD &nbsp;|&nbsp; Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+</footer>
+</body>
+</html>

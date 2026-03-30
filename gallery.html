@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego Castillo Franco, PhD — Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Diego Castillo <span>Franco</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="scripts.html">Scripts</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- GALLERY -->
+<section id="gallery" class="page-top">
+  <div class="section-inner">
+    <h2 class="section-title">Antarctica <span style="color:var(--teal2)">Field Work</span></h2>
+    <div class="section-line"></div>
+    <p class="section-subtitle">Photos from Antarctic expeditions — Admiralty Bay &amp; Deception Island</p>
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item" onclick="openLb(0)"><img src="antartica/DSC05159.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(1)"><img src="antartica/DSC_0600.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(2)"><img src="antartica/DSC04073.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(3)"><img src="antartica/051215_Antartica-EV_230.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(4)"><img src="antartica/IMG_1260.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(5)"><img src="antartica/DSC_0269.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(6)"><img src="antartica/DSC04413.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(7)"><img src="antartica/GOPR0104.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(8)"><img src="antartica/DSC05296.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(9)"><img src="antartica/DSC04494.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(10)"><img src="antartica/DSC04410.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(11)"><img src="antartica/DSC04104.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(12)"><img src="antartica/051215_Antartica-EV_121.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(13)"><img src="antartica/DSC03109.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(14)"><img src="antartica/301115_Antartica-EV_148-2.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(15)"><img src="antartica/IMG_20151205_105453614_HDR.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(16)"><img src="antartica/DSC04171.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(17)"><img src="antartica/IMG_3304.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(18)"><img src="antartica/DSC04272.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(19)"><img src="antartica/IMG_20151205_105502110.jpg" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(20)"><img src="antartica/DSC04084.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(21)"><img src="antartica/DSC_0088_Diego.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(22)"><img src="antartica/DSC_0399.JPG" alt="Antarctica" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLb(23)"><img src="antartica/IMG_20151205_105457607_HDR.jpg" alt="Antarctica" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLb()">&#x2715;</button>
+  <button id="lb-prev"  onclick="shiftLb(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="Antarctica">
+  <button id="lb-next"  onclick="shiftLb(1)">&#8250;</button>
+</div>
+
+<footer>
+  <p>&copy; 2026 Diego Castillo Franco, PhD &nbsp;|&nbsp; Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+</footer>
+
+<script>
+  const lbImgs = [...document.querySelectorAll('.gallery-item img')].map(i => i.src);
+  let lbIdx = 0;
+  function openLb(i) {
+    lbIdx = i;
+    document.getElementById('lb-img').src = lbImgs[i];
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function shiftLb(d) {
+    lbIdx = (lbIdx + d + lbImgs.length) % lbImgs.length;
+    document.getElementById('lb-img').src = lbImgs[lbIdx];
+  }
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLb();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowRight') shiftLb(1);
+    if (e.key === 'ArrowLeft')  shiftLb(-1);
+  });
+</script>
+</body>
+</html>
