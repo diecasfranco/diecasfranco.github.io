@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diego Castillo Franco, PhD — Contact</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,6 +21,9 @@
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- CONTACT -->
@@ -65,7 +68,19 @@
 </section>
 
 <footer>
-  <p>&copy; 2026 Diego Castillo Franco, PhD &nbsp;|&nbsp; Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/diecasfranco" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://orcid.org/0000-0002-0731-9511" target="_blank" title="ORCID"><i class="fa-brands fa-orcid"></i></a>
+      <a href="https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google"></i></a>
+      <a href="https://www.linkedin.com/in/diego-castillo-franco-b86414148/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <p>&copy; 2026 Diego Castillo Franco, PhD</p>
+    <p class="footer-sub">Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+  </div>
 </footer>
+
+<button id="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="main.js"></script>
 </body>
 </html>
