@@ -73,13 +73,13 @@ if (aboutStats && document.getElementById('stat-cites')) {
       fetch('scholar_stats.json?_=' + Date.now())
         .then(r => r.json())
         .then(d => {
-          animateCount(document.getElementById('stat-pubs'),   23);
+          animateCount(document.getElementById('stat-pubs'),   25);
           animateCount(document.getElementById('stat-cites'),  d.citations || 0);
           animateCount(document.getElementById('stat-hindex'), d.h_index   || 0);
           const upd = document.getElementById('scholar-updated');
           if (upd && d.updated) upd.textContent = 'Updated: ' + d.updated;
         })
-        .catch(() => animateCount(document.getElementById('stat-pubs'), 23));
+        .catch(() => animateCount(document.getElementById('stat-pubs'), 25));
       so.unobserve(aboutStats);
     }
   }, { threshold: 0.3 });
