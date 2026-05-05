@@ -73,7 +73,7 @@ if (aboutStats && document.getElementById('stat-cites')) {
       fetch('scholar_stats.json?_=' + Date.now())
         .then(r => r.json())
         .then(d => {
-          animateCount(document.getElementById('stat-pubs'),   25);
+          animateCount(document.getElementById('stat-pubs'),   26);
           animateCount(document.getElementById('stat-cites'),  d.citations || 0);
           animateCount(document.getElementById('stat-hindex'), d.h_index   || 0);
           const upd = document.getElementById('scholar-updated');
