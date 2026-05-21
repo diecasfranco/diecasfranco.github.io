@@ -35,7 +35,7 @@ if (scrollTopBtn) {
 /* ── SCROLL REVEAL ── */
 (function () {
   // Auto-tag revealable elements
-  document.querySelectorAll('.pub-year-group, .script-card, .tl-item').forEach(el => {
+  document.querySelectorAll('.pub-year-group, .script-card, .tl-item, .stat-card').forEach(el => {
     el.classList.add('reveal');
   });
 
@@ -66,8 +66,8 @@ function animateCount(el, target) {
   }, 25);
 }
 
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats && document.getElementById('stat-cites')) {
+const aboutStats = document.querySelector('.about-stats');
+if (aboutStats && document.getElementById('stat-cites')) {
   const so = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       fetch('scholar_stats.json?_=' + Date.now())
@@ -79,9 +79,9 @@ if (heroStats && document.getElementById('stat-cites')) {
           const upd = document.getElementById('scholar-updated');
           if (upd && d.updated) upd.textContent = 'Updated: ' + d.updated;
         })
-        .catch(() => animateCount(document.getElementById('stat-pubs'), 26));
-      so.unobserve(heroStats);
+        .catch(() => animateCount(document.getElementById('stat-pubs'), 25));
+      so.unobserve(aboutStats);
     }
-  }, { threshold: 0.1 });
-  so.observe(heroStats);
+  }, { threshold: 0.3 });
+  so.observe(aboutStats);
 }
