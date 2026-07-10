@@ -52,10 +52,21 @@
       </div>
     </div>
   </div>
-  <a class="hero-scroll" href="#about">
-    <span>Scroll</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </a>
+  <div class="hero-stats-bar">
+    <div class="hstat">
+      <div class="num" id="stat-pubs">—</div>
+      <div class="lbl">Publications</div>
+    </div>
+    <div class="hstat clickable" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
+      <div class="num" id="stat-cites">—</div>
+      <div class="lbl">Citations</div>
+      <div id="scholar-updated"></div>
+    </div>
+    <div class="hstat clickable" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
+      <div class="num" id="stat-hindex">—</div>
+      <div class="lbl">H-index</div>
+    </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -63,71 +74,38 @@
   <div class="section-inner">
     <h2 class="section-title">About <span>Me</span></h2>
     <div class="section-line"></div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          I am a microbiologist with broad expertise in microbial ecology and
-          host-associated microbiomes, with over 20 years of research experience
-          across five countries. My work spans Antarctic and marine sediment
-          microbiology, insect endosymbiosis, clinical microbiome studies, and
-          environmental microbiology in tropical and semi-arid ecosystems.
-        </p>
-        <p>
-          A major focus of my research is insect-associated microbiomes. In
-          planthoppers (Hemiptera: Fulgoromorpha), I have investigated the genomics
-          and transmission of nutritional endosymbionts across a diversity of host
-          lineages. In <em>Myrmica</em> ants, I contributed to uncovering cryptic
-          <em>Spiroplasma</em> co-infections involving two distinct clades, revealing
-          caste-dependent infection heterogeneity and phylogenomic evidence for an
-          exceptionally stable, maternally acquired symbiosis with a predicted
-          persistence of seven million years. I also worked on the isolation of
-          Lactic Acid Bacteria from <em>Messor</em> ants — particularly
-          <em>Weissella</em> — sequencing their genomes and assessing their metabolic
-          potential as probiotics. Currently, I work on honeybee
-          (<em>Apis mellifera</em>) gut microbiomes, applying 16S amplicon sequencing,
-          shotgun metagenomics, and custom bioinformatics pipelines to understand
-          how diet, environment, and colony management shape microbial communities.
-        </p>
-        <p>
-          I apply 16S/ITS amplicon sequencing, shotgun metagenomics, comparative
-          genomics, and long-read sequencing platforms (PacBio and Oxford Nanopore)
-          to characterise microbial communities and symbiont genomes at high
-          resolution. I also develop open-source Python and Bash tools that make
-          complex multi-sample analyses accessible through self-contained,
-          reproducible workflows.
-        </p>
-      </div>
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="num" id="stat-pubs">—</div>
-          <div class="lbl">Publications</div>
-        </div>
-        <div class="stat-card" style="cursor:pointer" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
-          <div class="num" id="stat-cites">—</div>
-          <div class="lbl">Citations</div>
-          <div id="scholar-updated" style="font-size:.68rem;color:var(--muted);margin-top:4px"></div>
-        </div>
-        <div class="stat-card" style="cursor:pointer" onclick="window.open('https://scholar.google.com/citations?user=CieheMcAAAAJ&hl=en','_blank')">
-          <div class="num" id="stat-hindex">—</div>
-          <div class="lbl">H-index</div>
-        </div>
-        <div class="stat-card">
-          <div class="num"><i class="fa-solid fa-dna" style="font-size:1.6rem;color:var(--teal)"></i></div>
-          <div class="lbl">Amplicon Sequencing</div>
-        </div>
-        <div class="stat-card">
-          <div class="num"><i class="fa-solid fa-bacteria" style="font-size:1.6rem;color:var(--teal)"></i></div>
-          <div class="lbl">Microbiome</div>
-        </div>
-        <div class="stat-card">
-          <div class="num"><i class="fa-solid fa-microscope" style="font-size:1.6rem;color:var(--teal)"></i></div>
-          <div class="lbl">Metagenomics</div>
-        </div>
-        <div class="stat-card">
-          <div class="num" style="font-size:1.45rem;line-height:1.4">🇨🇴 🇧🇷 🇺🇸 🇵🇱 🇧🇪</div>
-          <div class="lbl">5 Countries</div>
-        </div>
-      </div>
+    <div class="about-text">
+      <p>
+        I am a microbiologist with broad expertise in microbial ecology and
+        host-associated microbiomes, with over 20 years of research experience
+        across five countries. My work spans Antarctic and marine sediment
+        microbiology, insect endosymbiosis, clinical microbiome studies, and
+        environmental microbiology in tropical and semi-arid ecosystems.
+      </p>
+      <p>
+        A major focus of my research is insect-associated microbiomes. In
+        planthoppers (Hemiptera: Fulgoromorpha), I have investigated the genomics
+        and transmission of nutritional endosymbionts across a diversity of host
+        lineages. In <em>Myrmica</em> ants, I contributed to uncovering cryptic
+        <em>Spiroplasma</em> co-infections involving two distinct clades, revealing
+        caste-dependent infection heterogeneity and phylogenomic evidence for an
+        exceptionally stable, maternally acquired symbiosis with a predicted
+        persistence of seven million years. I also worked on the isolation of
+        Lactic Acid Bacteria from <em>Messor</em> ants — particularly
+        <em>Weissella</em> — sequencing their genomes and assessing their metabolic
+        potential as probiotics. Currently, I work on honeybee
+        (<em>Apis mellifera</em>) gut microbiomes, applying 16S amplicon sequencing,
+        shotgun metagenomics, and custom bioinformatics pipelines to understand
+        how diet, environment, and colony management shape microbial communities.
+      </p>
+      <p>
+        I apply 16S/ITS amplicon sequencing, shotgun metagenomics, comparative
+        genomics, and long-read sequencing platforms (PacBio and Oxford Nanopore)
+        to characterise microbial communities and symbiont genomes at high
+        resolution. I also develop open-source Python and Bash tools that make
+        complex multi-sample analyses accessible through self-contained,
+        reproducible workflows.
+      </p>
     </div>
   </div>
 </section>
