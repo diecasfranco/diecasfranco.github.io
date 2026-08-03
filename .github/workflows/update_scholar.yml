@@ -24,7 +24,7 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Fetch Scholar stats
-        run: python update_scholar.py
+        run: python update_scholar.py --tolerate-block
 
       - name: Commit updated stats
         run: |

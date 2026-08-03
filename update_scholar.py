@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Fetch citation count and H-index from public Google Scholar profile page."""
 
+import argparse
 import json
 import sys
 import time
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 
 try:
     import requests
@@ -26,11 +27,24 @@ HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
+# Scholar rejects datacenter IPs (GitHub Actions runners) with these codes.
+BLOCK_CODES = {403, 429}
+
 def fetch_stats(retries=3, delay=10):
+    """Return (citations, h_index, i10_index), or None on failure.
+
+    Sets fetch_stats.blocked when every attempt was rejected by Scholar's
+    bot protection rather than failing for some other reason.
+    """
+    fetch_stats.blocked = False
+    block_hits = 0
+
     for attempt in range(1, retries + 1):
         try:
             print(f"Attempt {attempt}/{retries} — fetching {SCHOLAR_URL}")
             resp = requests.get(SCHOLAR_URL, headers=HEADERS, timeout=20)
+            if resp.status_code in BLOCK_CODES:
+                block_hits += 1
             resp.raise_for_status()
 
             soup = BeautifulSoup(resp.text, "html.parser")
@@ -52,13 +66,28 @@ def fetch_stats(retries=3, delay=10):
                 print(f"  Retrying in {delay}s…")
                 time.sleep(delay)
 
+    fetch_stats.blocked = block_hits == retries
     return None
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument(
+        "--tolerate-block",
+        action="store_true",
+        help="Exit 0 (instead of 1) when Scholar blocks the request as a bot. "
+             "Used in CI, where datacenter IPs are routinely rejected and a red "
+             "run would be noise rather than signal.",
+    )
+    args = ap.parse_args()
+
     result = fetch_stats()
 
     if result is None:
         print("All attempts failed — keeping existing scholar_stats.json unchanged.", file=sys.stderr)
+        if fetch_stats.blocked and args.tolerate_block:
+            print("Cause was Scholar bot-blocking (HTTP 403/429), not a script error; "
+                  "treating as a skip.", file=sys.stderr)
+            sys.exit(0)
         sys.exit(1)
 
     citations, h_index, i10_index = result
@@ -67,7 +96,7 @@ def main():
         "citations":  citations,
         "h_index":    h_index,
         "i10_index":  i10_index,
-        "updated":    datetime.utcnow().strftime("%Y-%m-%d"),
+        "updated":    datetime.now(timezone.utc).strftime("%Y-%m-%d"),
     }
 
     with open("scholar_stats.json", "w") as f:
